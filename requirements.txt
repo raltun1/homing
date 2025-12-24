@@ -1,0 +1,60 @@
+# ===============================================================================
+# PRECISION LANDING SYSTEM - REQUIREMENTS
+# ===============================================================================
+# Python 3.9+ gerekli
+#
+# Kurulum:
+#   pip install -r requirements.txt
+#
+# RPI'da:
+#   pip install -r requirements.txt --break-system-packages
+# ===============================================================================
+
+# Flask - Web arayüzü
+flask>=2.0.0
+
+# OpenCV - Görüntü işleme
+opencv-python>=4.5.0
+
+# NumPy - Matematiksel işlemler
+numpy>=1.20.0
+
+# PySerial - Seri port haberleşmesi
+pyserial>=3.5
+
+# Picamera2 - RPI Camera Module (opsiyonel)
+# Not: RPI üzerinde apt ile kurulması önerilir:
+#   sudo apt install python3-picamera2
+# picamera2
+
+# Logging (built-in, ekstra paket gerekmez)
+
+# ===============================================================================
+# RPI'DA KURULUM
+# ===============================================================================
+# 
+# 1. Sistem paketlerini güncelle:
+#    sudo apt update && sudo apt upgrade -y
+#
+# 2. OpenCV için gerekli kütüphaneler:
+#    sudo apt install -y libatlas-base-dev libhdf5-dev libharfbuzz-dev \
+#                        libwebp-dev libjasper-dev libilmbase-dev \
+#                        libopenexr-dev libgstreamer1.0-dev
+#
+# 3. Picamera2 (RPI Camera için):
+#    sudo apt install -y python3-picamera2
+#
+# 4. Python paketleri:
+#    pip install flask opencv-python numpy pyserial --break-system-packages
+#
+# 5. Serial port izinleri:
+#    sudo usermod -a -G dialout $USER
+#    (Çıkış yapıp tekrar giriş yap)
+#
+# 6. UART'ı aktif et (RPI Config):
+#    sudo raspi-config
+#    Interface Options → Serial Port
+#    - Login shell: NO
+#    - Serial hardware: YES
+#
+# ===============================================================================
